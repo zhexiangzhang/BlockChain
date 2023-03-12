@@ -6,10 +6,6 @@ import (
 	"log"
 )
 
-//type BlockChain struct {
-//	Blocks []*Block // which contais one field which has an array of pointers to blocks
-//}
-
 type Block struct {
 	Hash     []byte
 	Data     []byte
@@ -29,12 +25,6 @@ func CreateBlock(data string, preHash []byte) *Block {
 
 	return block
 }
-
-//func (chain *BlockChain) AddBlock(data string) {
-//	preBlock := chain.Blocks[len(chain.Blocks)-1]
-//	new := CreateBlock(data, preBlock.Hash)
-//	chain.Blocks = append(chain.Blocks, new)
-//}
 
 func Genesis() *Block {
 	return CreateBlock("Genesis", []byte{})
@@ -68,12 +58,3 @@ func Handle(err error) {
 		log.Panic(err)
 	}
 }
-
-//func InitBlockChain() *BlockChain {
-//	// 先生成 *Block
-//	genesisBlock := Genesis()
-//	// 再生成 []*Block
-//	blockLink := []*Block{genesisBlock}
-//	// 最后生成需要的blockchain类型
-//	return &BlockChain{blockLink} // blockchain类型: blocks []*Block
-//}

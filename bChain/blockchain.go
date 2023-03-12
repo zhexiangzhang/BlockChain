@@ -8,7 +8,6 @@ import (
 type BlockChain struct {
 	LastHash []byte     // 最后一个block的hash，存在数据库中
 	Database *badger.DB // 指向数据库的指针
-	//Blocks   []*Block   // which contais one field which has an array of pointers to blocks
 }
 
 // 用于遍历区块链
